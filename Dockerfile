@@ -26,7 +26,8 @@ COPY package.json ./
 COPY . .
 
 
-RUN rm -rf package-lock.json
+RUN rm -rf package-lock.json 
+
 RUN npm install
 
 # Expose app
