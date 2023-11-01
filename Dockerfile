@@ -21,11 +21,13 @@ WORKDIR /usr/src/app
 # Copy package.json
 COPY package.json ./
 
-# Install NPM dependencies for function
-RUN npm install
 
 # Copy the entire project to the container
 COPY . .
+
+
+RUN rm -rf package-lock.json
+RUN npm install
 
 # Expose app
 EXPOSE 3000
